@@ -21,4 +21,4 @@ El impacto que tendria la empresa de mi tio al tener la aplicacion web es que el
 
 ## Proyeccion
 
-Se proyecta a futuro que se le pueda hacerle mejoras a la aplicacion web, por ejemplo que se le pueda hacer el seguimiento del producto que compro el cliente en el cual le aparezca si la empresa recibio el pago, si estan empacando el producto, que este en camino y que le este avisando si el producto eta cerca del lugar de destino del cliente, que se pueda agregar a futuro mas metodos de pago como Paypal, efectivo contra entrega, nequi, Apple Pay, Efecty
+Se proyecta a futuro que se le pueda hacerle mejoras a la aplicacion web, por ejemplo que se le pueda hacer el seguimiento del producto que compro el cliente en el cual le aparezca si la empresa recibio el pago, si estan empacando el producto, que este en camino y que le este avisando si el producto eta cerca del lugar de destino del cliente, que se pueda agregar a futuro mas metodos de pago como Paypal, efectivo contra entrega, nequi, Apple Pay, Efecty.

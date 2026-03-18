@@ -15,7 +15,7 @@ El problema principal que tiene la empresa de mi tio es que al no tener acceso a
 ---
 
 ## impacto
-El impacto que tendria la empresa de mi tio al tener la aplicacion web es que el cliente puede acceder la pagina 24/7 y pueda comprar el producto que pueda estar necesitando, otro impacto que tendria la empresa es que estaria subiendo las ventas al tener acceso con el publico digital que no pueda venir a la empresa directamente y que la unica forma que tengan para comprar los productos sea a traves de la aplicacion web, tambien tendria gran impacto en el sector porque la empresaria estaria creciendo mas, seria reconocida por los clientes que le estarian comprando constantemente a traves de la aplicacion web y esta pagina ayuda a atraer nuevos clientes que estarian buscando a que empresa comprar los productos con mas facl acceso y sin tener que desplazarsen hasta la bodega o punto fisico. 
+El impacto que tendria la empresa de mi tio al tener la aplicacion web es que el cliente puede acceder la pagina 24/7 y pueda comprar el producto que pueda estar necesitando, otro impacto que tendria la empresa es que estaria subiendo las ventas al tener acceso con el publico digital que no pueda venir a la empresa directamente y que la unica forma que tengan para comprar los productos sea a traves de la aplicacion web, tambien tendria gran impacto en el sector porque la empresaria estaria creciendo mas, seria reconocida por los clientes que le estarian comprando constantemente a traves de la aplicacion web y va a estar ayudando a atraer nuevos clientes que estarian buscando a que empresa comprar los productos con mas facil acceso y sin tener que desplazarsen hasta la bodega o punto fisico. 
 
 ---
 

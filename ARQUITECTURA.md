@@ -1,6 +1,6 @@
-# Arquitectura
+# GAP
 
-## Selección de Arquitectura
+## Arquitectura
 La arquitectura que en el cual voy a estar usando para la aplicacion web seria la de cliente servidor, elegi esa arquitectura para implementarla en la aplicacion web por las razones de que me permite aislar la interfaz de usuario de la lógica de negocio y el acceso a la base de datos, tambien es mas facil de estarle haciendo el mantenimiento a la base de datos sin estarle afectando directamente al frontend y se le estaria facilitando la futura implementación de las nuevas funciones que se va a estar agregando enn la aplicacion como el seguimiento de envíos o nuevos métodos de pago.
 
 ---

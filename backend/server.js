@@ -81,6 +81,44 @@ app.post('/api/login', async (req, res) => {
   }
 });
 
+// ========================================
+// ENDPOINT: Obtener productos disponibles
+// ========================================
+app.get('/api/productos', async (req, res) => {
+  try {
+    const [productos] = await pool.query(
+      'SELECT id, nombre, descripcion, precio, imagen_url FROM productos WHERE disponible = TRUE ORDER BY fecha_creacion DESC'
+    );
+
+    res.json(productos);
+  } catch (error) {
+    console.error('Error obteniendo productos:', error);
+    res.status(500).json({ mensaje: 'Error al obtener los productos' });
+  }
+});
+
+// ============================================
+// ENDPOINT: Obtener un producto por su ID
+// ============================================
+app.get('/api/productos/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const [productos] = await pool.query(
+      'SELECT id, nombre, descripcion, precio, imagen_url, caracteristicas, disponible FROM productos WHERE id = ?',
+      [id]
+    );
+
+    if (productos.length === 0) {
+      return res.status(404).json({ mensaje: 'Producto no encontrado' });
+    }
+
+    res.json(productos[0]);
+  } catch (error) {
+    console.error('Error obteniendo producto:', error);
+    res.status(500).json({ mensaje: 'Error al obtener el producto' });
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor backend corriendo en el puerto ${PORT}`);
   console.log(`Puedes probarlo en: http://localhost:${PORT}`);

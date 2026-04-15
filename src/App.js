@@ -19,7 +19,7 @@ function Navbar() {
   return (
     <nav className='navbar'>
       <div className='navbar-brand'>
-        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold', fontSize: '22px' }}>🐄 GAP</Link>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontWeight: 'bold', fontSize: '22px' }}>GAP</Link>
       </div>
       <div className='navbar-links'>
         <button className='nav-btn' onClick={() => navigate('/')}>Inicio</button>

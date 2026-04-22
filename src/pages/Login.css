@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   min-height: 80vh;
-  background-color: #f4f7f6;
+  background-color: #eaf2f8;
   font-family: Arial, sans-serif;
 }
 
@@ -19,11 +19,11 @@
 
 .login-box h2 {
   margin-bottom: 5px;
-  color: #333;
+  color: #0b2948;
 }
 
 .login-box p {
-  color: #666;
+  color: #34698a;
   margin-bottom: 25px;
   font-size: 14px;
 }
@@ -42,21 +42,28 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  color: #555;
+  color: #0a2944;
   font-size: 14px;
 }
 
 .form-group input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #b0c4d8;
   border-radius: 5px;
   font-size: 16px;
   box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2ecc71;
+  box-shadow: 0 0 0 3px rgba(46, 204, 113, 0.15);
 }
 
 .login-btn {
-  background-color: #4CAF50;
+  background-color: #0b2948;
   color: white;
   border: none;
   padding: 12px;
@@ -69,7 +76,7 @@
 }
 
 .login-btn:hover {
-  background-color: #45a049;
+  background-color: #154360;
 }
 
 .error-mensaje {
@@ -82,8 +89,8 @@
 }
 
 .exito-mensaje {
-  background-color: #ccffcc;
-  color: #006600;
+  background-color: #d5f5e3;
+  color: #1a7a42;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -96,12 +103,12 @@
 }
 
 .link-text {
-  color: #4CAF50;
+  color: #2ecc71;
   font-weight: bold;
   cursor: pointer;
   text-decoration: underline;
 }
 
 .link-text:hover {
-  color: #388e3c;
+  color: #1a9c54;
 }

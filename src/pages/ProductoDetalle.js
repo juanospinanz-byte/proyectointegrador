@@ -11,7 +11,7 @@ function formatearPrecio(precio) {
   }).format(precio);
 }
 
-function ProductoDetalle() {
+function ProductoDetalle({ agregarAlCarrito }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [producto, setProducto] = useState(null);
@@ -138,6 +138,20 @@ function ProductoDetalle() {
           </div>
 
           <div className="detalle-acciones">
+            <button
+              className={`detalle-btn-contactar ${producto._agregado ? 'detalle-btn-agregado' : ''}`}
+              onClick={() => {
+                if (agregarAlCarrito) {
+                  const ok = agregarAlCarrito(producto);
+                  if (ok) {
+                    setProducto(prev => ({ ...prev, _agregado: true }));
+                    setTimeout(() => setProducto(prev => ({ ...prev, _agregado: false })), 1500);
+                  }
+                }
+              }}
+            >
+              {producto._agregado ? '✓ Agregado al carrito' : '🛒 Agregar al carrito'}
+            </button>
             <button className="detalle-btn-volver-secundario" onClick={() => navigate('/')}>
               ← Volver a productos
             </button>

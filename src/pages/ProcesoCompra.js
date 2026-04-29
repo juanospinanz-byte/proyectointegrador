@@ -19,6 +19,9 @@ function ProcesoCompra({ carrito, finalizarCompra }) {
     nombre: '',
     telefono: '',
     direccion: '',
+    numeroTarjeta: '',
+    fechaVencimiento: '',
+    codigoSeguridad: '',
   });
 
   const total = useMemo(
@@ -34,7 +37,14 @@ function ProcesoCompra({ carrito, finalizarCompra }) {
   const manejarConfirmacion = (e) => {
     e.preventDefault();
 
-    if (!datosCliente.nombre || !datosCliente.telefono || !datosCliente.direccion) {
+    if (
+      !datosCliente.nombre ||
+      !datosCliente.telefono ||
+      !datosCliente.direccion ||
+      !datosCliente.numeroTarjeta ||
+      !datosCliente.fechaVencimiento ||
+      !datosCliente.codigoSeguridad
+    ) {
       alert('Completa todos los datos para continuar con la compra.');
       return;
     }
@@ -128,6 +138,40 @@ function ProcesoCompra({ carrito, finalizarCompra }) {
               value={datosCliente.direccion}
               onChange={manejarCambio}
               placeholder="Dirección completa"
+            />
+          </label>
+
+          <label>
+            Número de tarjeta
+            <input
+              type="text"
+              name="numeroTarjeta"
+              value={datosCliente.numeroTarjeta}
+              onChange={manejarCambio}
+              placeholder="Ej: 4111 1111 1111 1111"
+              maxLength={19}
+            />
+          </label>
+
+          <label>
+            Fecha de vencimiento
+            <input
+              type="month"
+              name="fechaVencimiento"
+              value={datosCliente.fechaVencimiento}
+              onChange={manejarCambio}
+            />
+          </label>
+
+          <label>
+            Código de seguridad
+            <input
+              type="password"
+              name="codigoSeguridad"
+              value={datosCliente.codigoSeguridad}
+              onChange={manejarCambio}
+              placeholder="Ej: 123"
+              maxLength={4}
             />
           </label>
 

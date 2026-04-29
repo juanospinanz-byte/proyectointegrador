@@ -11,7 +11,7 @@ function formatearPrecio(precio) {
   }).format(precio);
 }
 
-function Carrito({ carrito, actualizarCantidad, eliminarDelCarrito }) {
+function Carrito({ carrito, actualizarCantidad, eliminarDelCarrito, iniciarCompra }) {
   const navigate = useNavigate();
 
   const calcularSubtotal = () => {
@@ -132,6 +132,10 @@ function Carrito({ carrito, actualizarCantidad, eliminarDelCarrito }) {
             </div>
 
             <p className="resumen-nota">IVA incluido en todos los precios</p>
+
+            <button className="carrito-btn-comprar" onClick={iniciarCompra}>
+              Comprar productos del carrito
+            </button>
 
             <button className="resumen-btn-seguir" onClick={() => navigate('/')}>
               ← Seguir comprando

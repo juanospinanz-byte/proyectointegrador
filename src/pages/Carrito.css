@@ -331,6 +331,12 @@
   margin-bottom: 24px;
 }
 
+.resumen-card .carrito-btn-comprar {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px 20px;
+}
+
 .resumen-btn-seguir {
   width: 100%;
   background: transparent;

@@ -4,6 +4,7 @@ import Registro from './pages/Registro';
 import Login from './pages/Login';
 import ProductoDetalle from './pages/ProductoDetalle';
 import Carrito from './pages/Carrito';
+import ProcesoCompra from './pages/ProcesoCompra';
 import './App.css';
 
 // ========================================
@@ -368,6 +369,26 @@ function AppContent() {
     );
   }, []);
 
+  const iniciarCompra = useCallback(() => {
+    const token = localStorage.getItem('gapToken');
+    if (!token) {
+      alert('Debes iniciar sesión para continuar con la compra.');
+      navigate('/login');
+      return;
+    }
+
+    if (carrito.length === 0) {
+      alert('Tu carrito está vacío.');
+      return;
+    }
+
+    navigate('/proceso-compra');
+  }, [carrito.length, navigate]);
+
+  const finalizarCompra = useCallback(() => {
+    setCarrito([]);
+  }, []);
+
   const totalItemsCarrito = carrito.reduce((sum, item) => sum + item.cantidad, 0);
 
   return (
@@ -384,6 +405,13 @@ function AppContent() {
             carrito={carrito}
             actualizarCantidad={actualizarCantidad}
             eliminarDelCarrito={eliminarDelCarrito}
+            iniciarCompra={iniciarCompra}
+          />
+        } />
+        <Route path="/proceso-compra" element={
+          <ProcesoCompra
+            carrito={carrito}
+            finalizarCompra={finalizarCompra}
           />
         } />
       </Routes>

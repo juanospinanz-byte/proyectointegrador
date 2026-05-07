@@ -1,7 +1,3 @@
--- ============================================
--- BASE DE DATOS: GAP (Insumos Ganaderos)
--- ============================================
-
 -- 1. Crear la base de datos
 CREATE DATABASE IF NOT EXISTS gap_db;
 

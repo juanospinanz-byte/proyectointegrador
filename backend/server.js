@@ -119,6 +119,52 @@ app.get('/api/productos/:id', async (req, res) => {
   }
 });
 
+// ============================================
+// ENDPOINT: Procesar compra y descontar stock
+// ============================================
+app.post('/api/compra', async (req, res) => {
+  let connection;
+  try {
+    const { carrito } = req.body;
+    
+    if (!carrito || carrito.length === 0) {
+      return res.status(400).json({ mensaje: 'El carrito está vacío' });
+    }
+
+    connection = await pool.getConnection();
+    await connection.beginTransaction();
+
+    for (const item of carrito) {
+      const [rows] = await connection.query('SELECT stock, nombre FROM productos WHERE id = ? FOR UPDATE', [item.id]);
+      
+      if (rows.length === 0) {
+        throw new Error(`Producto con id ${item.id} no encontrado`);
+      }
+      
+      const stockActual = rows[0].stock;
+      if (stockActual < item.cantidad) {
+        throw new Error(`Stock insuficiente para el producto "${rows[0].nombre}". Quedan ${stockActual} disponibles.`);
+      }
+
+      await connection.query('UPDATE productos SET stock = stock - ? WHERE id = ?', [item.cantidad, item.id]);
+    }
+
+    await connection.commit();
+    res.status(200).json({ mensaje: 'Compra procesada correctamente' });
+
+  } catch (error) {
+    if (connection) {
+      await connection.rollback();
+    }
+    console.error('Error procesando compra:', error);
+    res.status(500).json({ mensaje: error.message || 'Error al procesar la compra' });
+  } finally {
+    if (connection) {
+      connection.release();
+    }
+  }
+});
+
 app.listen(PORT, () => {
   console.log(`Servidor backend corriendo en el puerto ${PORT}`);
   console.log(`Puedes probarlo en: http://localhost:${PORT}`);

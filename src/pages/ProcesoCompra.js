@@ -34,7 +34,7 @@ function ProcesoCompra({ carrito, finalizarCompra }) {
     setDatosCliente((prev) => ({ ...prev, [name]: value }));
   };
 
-  const manejarConfirmacion = (e) => {
+  const manejarConfirmacion = async (e) => {
     e.preventDefault();
 
     if (
@@ -49,9 +49,28 @@ function ProcesoCompra({ carrito, finalizarCompra }) {
       return;
     }
 
-    setProductosConfirmados(carrito);
-    setCompraFinalizada(true);
-    finalizarCompra();
+    try {
+      const respuesta = await fetch('http://localhost:5000/api/compra', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ carrito }),
+      });
+
+      if (!respuesta.ok) {
+        const errorData = await respuesta.json();
+        alert(`Error al procesar la compra: ${errorData.mensaje}`);
+        return;
+      }
+
+      setProductosConfirmados(carrito);
+      setCompraFinalizada(true);
+      finalizarCompra();
+    } catch (error) {
+      console.error('Error procesando la compra:', error);
+      alert('Ocurrió un error de conexión. Intenta de nuevo más tarde.');
+    }
   };
 
   if (carrito.length === 0 && !compraFinalizada) {

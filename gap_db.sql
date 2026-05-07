@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS gap_db;
 -- 2. Usar la base de datos
 USE gap_db;
 
--- 3. Crear tabla de usuarios
+-- 3. Crear la tabla de usuarios
 CREATE TABLE IF NOT EXISTS usuarios (
   id            INT AUTO_INCREMENT PRIMARY KEY,  -- ID único por usuario
   nombre        VARCHAR(100) NOT NULL,            -- Nombre completo

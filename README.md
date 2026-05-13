@@ -7,6 +7,10 @@ La base del sistema reside en la conexión estable entre el servidor (Backend) y
 <img width="1120" height="739" alt="imagen" src="https://github.com/user-attachments/assets/4c482241-7b06-4d83-b1ab-b58088ead1db" />
 
 ---
+![alt text](image.png)
+
+---
+
 <img width="276" height="469" alt="imagen" src="https://github.com/user-attachments/assets/052fd228-2bc4-4a24-9383-e8d2d7beef0c" />
 <img width="1102" height="743" alt="imagen" src="https://github.com/user-attachments/assets/24fe88f0-45b8-4263-b684-8344d8f09814" />
 
